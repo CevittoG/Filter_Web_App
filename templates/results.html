@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+
+		body {
+		  background-color: #85250d;
+		}
+
+		h1 {
+		  color: #fff;
+		  font-family: 'Righteous', cursive;
+		  font-size: 65px; font-weight: normal; 
+		  line-height: 60px; 
+		  margin: 10px 0 20px; 
+		  text-transform: uppercase; 
+		  text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; 
+		  text-align: center; 
+		}
+
+
+		h2 { 
+		  font-size: 30px; 
+		  letter-spacing: -1px; 
+		  color: #DFBF84; 
+		  text-transform: uppercase; 
+		  text-shadow: 1px 1px 0 #000, margin: 10px 0 24px; 
+		  text-align: center; 
+		  line-height: 50px; 
+		}
+
+
+		p { 
+		  color: #f6f6f6; 
+		  font-family: 'Orienta', sans-serif; 
+		  font-size: 16px; 
+		  line-height: 24px; 
+		  margin: 0 0 24px; 
+		  text-align: center; 
+		}
+
+
+		a { 
+		  color: #e8d4a7; 
+		  text-decoration: none; 
+		  text-align: right; 
+		  padding: 15px; 
+		  font-size: 20px; 
+		}
+
+
+		a:hover { 
+		  color: #da9650; 
+		  text-decoration: blink; 
+		}
+		
+		div {
+		  text-align: center;
+		}
+		
+		.button {
+		  border: none;
+		  color: #85250d;
+		  padding: 16px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  transition-duration: 0.4s;
+		  cursor: pointer;
+		  text-align: center;
+		}
+
+		.button1 {
+		  background-color: #85250d; 
+		  color: black; 
+		  border: 2px solid #c79b0c;
+		  text-align: center;
+		}
+
+		.button1:hover {
+		  background-color: #c79b0c;
+		  color: white;
+		  text-align: center;
+		}
+		.center {
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+		table {
+		  border-collapse: collapse;
+		  width: 75%;
+		}
+
+		th, td {
+		  padding: 8px;
+		  text-align: left;
+		  border-bottom: 1px solid #ddd;
+		}
+
+		td:hover {background-color:#ab2c11;}
+			   
+	    </style>
+	    <br>
+	    <br>
+	    <br>
+	    <br>
+	    <title>365 Sanguchez</title>
+	</head>
+    <body>
+    	<br>
+	    <br>
+	    {% if  (found_id == []) or (found_id == '' )%}
+	    	<h1>No se encontraron coincidencias</h1> 
+	    	<br>
+	    	<br>
+	    	<br>
+	    	<br>
+	    	<br>
+	    	<br>
+	    {% else %}
+	        <h1>Resultados</h1> 
+	        <p>Sanguches que poseen: {% for d in search_input %}{{d}}{% endfor %}.....    *Nombre (id, valoracion)*</p>
+	        <br>
+	        {% for h in found_id %}
+	        <p>{{type_data[6][h]}} ({{type_data[0][h]}}, {{type_data[7][h]}}).</p>
+	        {% endfor %}
+	        <br>
+	        <br>
+	        <h2>Mejor de seleccion</h2>
+	        <div>
+	        <table class="center" border = "1" bordercolor = #c79b0c bgcolor = #85250d>
+	        {% for i in best_id %}
+	        	<tr><td>
+		        	{% for p in range(len_td) %}
+		        		{% if type_data[p][i] != '' %}
+		        			<p>{{print_data[p]}}{{type_data[p][i]}}</p>
+		        		{% endif %}
+		        	{% endfor %}
+		        	<br>
+		        	<p>Ingredientes:</p>
+		        	{% for s in range(len_in) %}
+		        		{% if ings[s][i] != '' %}
+		        		<p>- {{ings[s][i]}}
+		        		{% endif %}
+		        	{% endfor %}
+		        </td></tr>
+		    {% endfor %}
+	    	</table>
+	    	</div> 
+	    {% endif %}
+        	<div>
+	        <form action="#" method="post">
+	        	<button class="button button1" type="submit" value="main_menu"><p>Menu de busqueda</p></button>
+	        </form>
+	    </div>   
+    </body>
+</html>
