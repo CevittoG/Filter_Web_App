@@ -38,7 +38,7 @@ Pasos a seguir para lograr implementar de manera completa la aplicacion web. Jun
 
   5. En el archivo “creds.json” se puede encontrar una serie de datos pertenecientes a la credencial generada. Dentro de estos datos, en la sección de "client_email" se encontrará la dirección de email del cliente creado, el cual será la conexión con el archivo online almacenado en Google Drive. Para enlazar ambas partes, es importante compartir el archivo con dicha dirección email bajo la categoría de editor. Para esto, una vez que se está dentro del archivo Google Sheet, se debe hacer click en el botón verde ubicado en el extremo superior derecho de la pantalla; seguidamente se ingresa la dirección extraída de la credencial.
 
-  6. Una vez completados los pasos anteriores, el programa se encontrará conectado a Google Drive, por lo que se puede subir los archivos enviados por email al servidor de la página web de 365Sanguchez.
+  6. Una vez completados los pasos anteriores, el programa se encontrará conectado a Google Drive, por lo que se puede subir los archivos mencionados al servidor de la página web.
 
   7. Para lograr que el programa sea completamente funcional, se instalará las librerías de Python (flask, gspread, oauth2client.service_account, numpy, pandas) ocupadas en el programa, dentro del servidor. De esta manera el servidor podrá leer el código de Python sin problemas.
 
